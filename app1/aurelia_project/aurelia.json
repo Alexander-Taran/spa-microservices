@@ -1,0 +1,110 @@
+{
+  "name": "app1",
+  "type": "project:application",
+  "bundler": {
+    "id": "cli",
+    "displayName": "Aurelia-CLI"
+  },
+  "build": {
+    "targets": [
+      {
+        "id": "web",
+        "displayName": "Web",
+        "port": 9000,
+        "index": "index.html",
+        "baseDir": ".",
+        "output": "../server/dist",
+        "baseUrl":"/dist/"
+      }
+    ],
+    "options": {
+      "minify": "stage & prod",
+      "sourcemaps": "dev & stage",
+      "rev": false,
+      "cache": "dev & stage"
+    },
+    "bundles": [
+      {
+        "name": "app1/app-bundle.js",
+        "source": [
+          "**/*.{js,json,css,html}"
+        ]
+      }
+      
+    ],
+    "loader": {
+      "type": "require",
+      "configTarget_": "vendor-bundle.js",
+      "includeBundleMetadataInConfig_": "auto",
+      "plugins": [
+        {
+          "name": "text",
+          "extensions": [
+            ".html",
+            ".css"
+          ],
+          "stub": true
+        }
+      ]
+    }
+  },
+  "platform": {
+    "id": "web",
+    "displayName": "Web",
+    "port": 9000,
+    "index": "index.html",
+    "baseDir": ".",
+    "output": "../server/dist",
+    "baseUrl":"/dist/"
+  },
+  "transpiler": {
+    "id": "typescript",
+    "displayName": "TypeScript",
+    "fileExtension": ".ts",
+    "dtsSource": [
+      "./custom_typings/**/*.d.ts"
+    ],
+    "source": "src/**/*.ts"
+  },
+  "markupProcessor": {
+    "id": "none",
+    "displayName": "None",
+    "fileExtension": ".html",
+    "source": "src/**/*.html"
+  },
+  "cssProcessor": {
+    "id": "none",
+    "displayName": "None",
+    "fileExtension": ".css",
+    "source": "src/**/*.css"
+  },
+  "jsonProcessor": {
+    "id": "none",
+    "displayName": "None",
+    "fileExtension": ".json",
+    "source": "src/**/*.json"
+  },
+  "editor": {
+    "id": "vscode",
+    "displayName": "Visual Studio Code"
+  },
+  "unitTestRunners": [
+    {
+      "id": "none",
+      "displayName": "None"
+    }
+  ],
+  "integrationTestRunner": {
+    "id": "none",
+    "displayName": "None"
+  },
+  "paths": {
+    "root": "src",
+    "resources": "resources",
+    "elements": "resources/elements",
+    "attributes": "resources/attributes",
+    "valueConverters": "resources/value-converters",
+    "bindingBehaviors": "resources/binding-behaviors"
+  },
+  "packageManager": "yarn"
+}

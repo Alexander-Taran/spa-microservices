@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SPA as microservices</title>
+</head>
+
+<body>
+    <a href="/">root</a>
+    <a href="app1.html">app 1</a>
+    <a href="app2.html">app 2</a>
+    <!-- <a href="app3.html">app 3</a>
+    <a href="app4.html">app 4</a>
+    <a href="app5.html">app 5</a> -->
+    <div aurelia-app="app1/main">
+        <script src="./scripts/config.js"></script>
+        <script src="./dist/vendor-bundle.js" data-main="aurelia-bootstrapper"></script>
+    </div>
+</body>
+
+</html>
